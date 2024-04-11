@@ -55,16 +55,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
+    'groceries',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_vite',
     'django_extensions',
-    'core',
-    'groceries'
+    'django_vite',
 ]
 
 MIDDLEWARE = [
@@ -156,6 +156,11 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "grocery_list_static")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GRAPH_MODELS = {
+ 'all_applications': True,
+ 'group_models': True,
+}
 
 LOGIN_REDIRECT_URL = "/groceries/groceries"
 LOGOUT_REDIRECT_URL = "/"
