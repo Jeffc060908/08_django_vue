@@ -16,8 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('groceries/', include('groceries.urls', namespace='groceries')),
+=======
+import core.views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", core.views.HomePageView.as_view(), name="homepage"),
+    path("accounts/", include("django.contrib.auth.urls")),
+
+
+>>>>>>> main
 ]
