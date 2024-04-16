@@ -1,8 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
-
-# Create your models here.
-=======
 from django.contrib.auth.models import User
 
 
@@ -16,4 +12,3 @@ class Profile(models.Model):
     guid_password_expiry = models.DateTimeField(null=True, blank=True)
     
     
->>>>>>> main
