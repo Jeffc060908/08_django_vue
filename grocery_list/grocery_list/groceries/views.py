@@ -20,13 +20,13 @@ class GroceryListView(ListView):
     
 class GroceryCreateView(CreateView):
     model = grocery 
-    fields = ['name']
+    fields = ['name', 'price']
     
     def form_valid(self, form):
         response = super().form_valid(form)
         messages.add_message(
             self.request, messages.SUCCESS,
-            'Actor "{grocery_name}" has been created'.format(
+            'Grocery "{grocery_name}" has been created'.format(
                 grocery_name=self.object.name))
         return response
 

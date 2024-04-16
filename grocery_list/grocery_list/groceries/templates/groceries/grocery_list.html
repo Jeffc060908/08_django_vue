@@ -2,10 +2,8 @@
 
 {% block content %}
 <a href="{% url 'groceries:grocery_create' %}">New grocery</a><br/><br/>
-
-
-stuff needs to be added here 
-
+{% for grocery in object_list %}
+    <a href="{% url 'groceries:grocery_detail' grocery.id %}">{{ grocery.name }}</a><br/>
+{% endfor %}
 {% endblock content %}
-
 
