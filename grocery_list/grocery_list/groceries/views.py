@@ -20,6 +20,7 @@ class GroceryListView(ListView):
     
 class GroceryCreateView(CreateView):
     model = grocery 
+    fields = ['name']
     
     def form_valid(self, form):
         response = super().form_valid(form)

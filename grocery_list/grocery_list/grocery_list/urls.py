@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", core.views.HomePageView.as_view(), name="homepage"),
     path("accounts/", include("django.contrib.auth.urls")),
+    path('groceries/', include('groceries.urls', namespace='groceries')),
+    
 
 
 ]
