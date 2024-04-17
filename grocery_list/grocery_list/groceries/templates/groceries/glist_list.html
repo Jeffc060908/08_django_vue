@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'groceries:list_create' %}">New Grocery List</a><br/><br/>
+{% for glist in object_list %}
+    <a href="{% url 'groceries:list_detail' glist.id %}">{{ glist.name }}</a>
+    <br/>
+{% endfor %}
+{% endblock content %}

@@ -2,6 +2,8 @@
 
 {% block content %}
 <a href="{% url 'groceries:grocery_list' %}">Groceries list</a><br/><br/>
+<a href="{% url 'groceries:grocery_update' object.id %}">Update Grocery</a><br/>
+<a href="{% url 'groceries:grocery_delete' object.id %}">Delete Grocery</a><br/>
 <h1>{{ object.name }}</h1>
 <h1>{{ object.price }}</h1>
 {% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'groceries:glist_list' %}">Grocery Lists list</a><br/>
+<a href="{% url 'groceries:grocery_update' object.id %}">Update List</a><br/>
+<a href="{% url 'groceries:grocery_delete' object.id %}">Delete List</a><br/>
+<h1>{{ object.name }}</h1>
+Groceries:<br/>
+{% for grocery in object.groceries.all %}
+{{grocery.name}}<br/>
+<br/>
+Date of creation: {{object.date_of_creation|date:"%d %B %Y"}}<br/>
+{% endfor %}
+{% endblock content %}
