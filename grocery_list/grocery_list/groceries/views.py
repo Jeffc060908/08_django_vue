@@ -135,15 +135,15 @@ class ListUpdateView(UpdateView):
            glist_grocery_list.append({"id": grocery.id, "name": grocery.name})
        glist_dico["groceries"] = glist_grocery_list
        grocery_list = list(grocery.objects.all().values())
-       context["grocery_dict"] = movie_dico
-       context["actor_list"] = actor_list
+       context["glist_dict"] = glist_dico
+       context["grocery_list"] = grocery_list
        print("context", context)
        return context
 
    # comment the following line to show the error about not having an
    # success_url
    def get_success_url(self):
-       return reverse_lazy("movies:movie_detail", args=[self.object.id])
+       return reverse_lazy("groceries:glist_detail", args=[self.object.id])
        # you can also use it this way with kwargs, just to let you know
        # but here we have only one argument, so no mistake can be done
        # return reverse_lazy("movies:actor_detail",

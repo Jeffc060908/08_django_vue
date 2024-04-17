@@ -19,7 +19,7 @@ urlpatterns = [
          name="list_detail"),
         path("lists/update/<int:pk>", views.ListUpdateView.as_view(),
          name="glist_update"),
-        path("lists/delete/<int:pk>", views.ListsDeleteView.as_view(),
+        path("lists/delete/<int:pk>", views.ListDeleteView.as_view(),
          name="glist_delete"),
 
 
