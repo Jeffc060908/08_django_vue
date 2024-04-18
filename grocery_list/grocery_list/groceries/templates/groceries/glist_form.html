@@ -1,11 +1,43 @@
 {% extends "base.html" %}
+{% load django_vite %}
+
+{% block head %}
+<script type = "text/javascript">
+
+var ext_csrf_token = '{{ csrf_token }}'
+var ext_form = '{{ form.as_p | safe}}'
+var ext_glist_dict = {{ glist_dict | safe }}
+var ext_grocery_list = {{ grocery_list | safe }}
+</script>
+
+{% endblock head %}
 
 {% block content %}
 
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
+<br><br>
+<div id="app">
+    <div token="{{csrf_token}}"></div>
+    <app></app>
+</div>
+
+
 
 {% endblock content %}
+
+{% block js %}
+{{ block.super }}
+<script>
+    var ext_csrf_token = '{{ csrf_token }}'
+    var ext_form = `{{ form.as_p | safe}}`
+    var ext_glist_dict = {{ glist_dict | safe }}
+    var ext_grocery_list = {{ grocery_list | safe }}
+
+
+</script>
+
+{% vite_hmr_client %}
+{% vite_asset 'src/apps/list_edit/list_edit.js' %}
+{% endblock js %}
+
+
 

@@ -11,6 +11,7 @@ from django.views import View
 from django.shortcuts import get_object_or_404
 from .models import GList, Grocery
 from .forms import ListForm
+import simplejson as json
 
 
 
@@ -110,7 +111,8 @@ class ListDeleteView(DeleteView):
     
 class ListUpdateView(UpdateView):
    model = GList
-   form_class = ListForm
+
+   fields = ['date_of_creation', 'groceries', 'name']
 
    def form_valid(self, form):
        response = super().form_valid(form)
@@ -134,10 +136,10 @@ class ListUpdateView(UpdateView):
        glist_grocery_list = []
        for grocery in groceries:
            glist_grocery_list.append({"name": grocery.name, "price": grocery.price})
-       glist_dico["groceries"] = glist_grocery_list
+       glist_dico["groceries"] = json.dumps(glist_grocery_list)
        grocery_list = list(Grocery.objects.all().values())
-       context["glist_dict"] = glist_dico
-       context["grocery_list"] = grocery_list
+       context["glist_dict"] = json.dumps(glist_dico)
+       context["grocery_list"] = json.dumps(grocery_list)
        print("context", context)
        return context
 
