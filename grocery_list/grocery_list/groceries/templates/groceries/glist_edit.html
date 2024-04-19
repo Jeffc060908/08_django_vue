@@ -28,7 +28,7 @@ var ext_grocery_list = {{ grocery_list | safe }}
 {{ block.super }}
 <script>
     var ext_csrf_token = '{{ csrf_token }}'
-    var ext_form = `{{ form.as_p | safe}}`
+    var ext_form = '{{ form.as_p | safe}}'
     var ext_glist_dict = {{ glist_dict | safe }}
     var ext_grocery_list = {{ grocery_list | safe }}
 
