@@ -1,0 +1,48 @@
+﻿4/9/24
+Jeff: nothing
+Marcus: nothing
+
+
+4/10/24
+Jeff: django and vue setup
+Marcus: django and vue setup
+
+
+4/11/24
+Jeff: more django and vue setup
+Marcus: more django and vue setup
+
+
+4/12/24
+Jeff: beginning to work on implementing login  
+Marcus: created tables
+
+
+4/13/24
+Jeff: login added 
+Marcus: nothing
+
+
+4/14/24
+Jeff: nothing
+Marcus: nothing
+
+
+4/15/24
+Jeff: tried to fix templates not loading in 
+Marcus: worked on backend for loading the grocery list
+
+
+4/16/24
+Jeff: added templates for creating a new grocery, ran into bug for actually creating a grocery, problem was migrations
+Marcus: added price field, created working grocery list and detail
+
+
+4/17/24
+Jeff: attempted to get context variables to the template
+Marcus: completed all templates, added methods for editing groceries and lists
+
+
+4/18/24
+Jeff: FINALLY got the context variables to the template and FINALLY got vue to access those context variables, problem was json.dumps and tilde 
+Marcus: attempted to get vue to cooperate with little success, added some finishing touches
